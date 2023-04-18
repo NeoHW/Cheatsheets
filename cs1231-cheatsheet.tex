@@ -1308,21 +1308,6 @@ Let $G = (V_G, E_G)$ and $G' = (V_{G'}, E_{G'})$ be two graphs.
         \item left subtree $\then$ right subtree $\then$ current vertex 
     \end{itemize}
 \end{itemize}
-\begin{center}
-    \begin{multicols}{3}
-        \textit{pre-order DFS}
-        \includegraphics[width=0.9\linewidth]{cs1231s-ch11-preorder}
-        \\* {\tiny\textbf{F-B-A-D-C-E-G-I-H}}
-        
-        \textit{in-order DFS}
-        \includegraphics[width=0.9\linewidth]{cs1231s-ch11-inorder}
-        \\* {\tiny\textbf{A-B-C-D-E-F-G-H-I}}
-        
-        \textit{post-order DFS}
-        \includegraphics[width=0.9\linewidth]{cs1231s-ch11-postorder}
-        \\* {\tiny\textbf{A-C-E-D-B-H-I-G-F}}
-    \end{multicols}
-\end{center}
 
 \subsection{spanning trees}
 \begin{itemize}
@@ -1391,7 +1376,7 @@ For a connected weighted graph $G$ with $n$ vertices:
         \\ idempotent laws
             & $p \land p \equiv p$
             & $p \lor p \equiv p$
-        \\ universal bound laws
+        \\ annihilators laws
             & $p \lor true \equiv true$
             & $p \land false \equiv false$
         \\ negation laws
@@ -1406,6 +1391,9 @@ For a connected weighted graph $G$ with $n$ vertices:
         \\ De Morgan's Laws
             & $\lnot (p \lor q) \equiv \lnot p \land \lnot q $
             & $\lnot (p \land q) \equiv \lnot p \lor \lnot q$
+        \\ Implication law
+            & $p \rightarrow q \equiv \lnot p \lor q$
+            & -
      \end{tabular}
      \quad
      \begin{tabular}{>{\color{black}}r | c | c}
