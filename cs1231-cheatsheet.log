@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  19 APR 2023 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  19 APR 2023 01:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,27 +895,27 @@ LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 7.52002pt on input line 524.
+(Font)              scaled to size 7.52002pt on input line 526.
  [2]
 LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 4.70001pt on input line 941.
+(Font)              scaled to size 4.70001pt on input line 949.
  [3] [4] (./cs1231-cheatsheet.aux)
 Package rerunfilecheck Info: File `cs1231-cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: 6533D154F9320FDF645677BC1A1E740D;11439.
+(rerunfilecheck)             Checksum: B7E5A6070F1B0C1D9FFB6BC784AE4409;11337.
  ) 
 Here is how much of TeX's memory you used:
- 26654 strings out of 476025
- 530389 string characters out of 5790017
+ 26652 strings out of 476025
+ 530365 string characters out of 5790017
  1962388 words of memory out of 5000000
- 46484 multiletter control sequences out of 15000+600000
+ 46483 multiletter control sequences out of 15000+600000
  559988 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,80p,458b,1037s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on cs1231-cheatsheet.pdf (4 pages, 244948 bytes).
+Output written on cs1231-cheatsheet.pdf (4 pages, 244283 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 504 compressed objects within 6 object streams
- 152 named destinations out of 1000 (max. 500000)
- 677 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 151 named destinations out of 1000 (max. 500000)
+ 669 words of extra memory for PDF output out of 10000 (max. 10000000)
 

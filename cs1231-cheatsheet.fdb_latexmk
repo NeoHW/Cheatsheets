@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1681834630 "/Users/haowei/codes/Cheatsheets/cs1231-cheatsheet.tex" "cs1231-cheatsheet.pdf" "cs1231-cheatsheet" 1681834632 0
-  "/Users/haowei/codes/Cheatsheets/cs1231-cheatsheet.tex" 1681834630 48459 b19659783b751c124fa0f4d07a3c93f9 ""
+["pdflatex"] 1681840013 "/Users/haowei/codes/Cheatsheets/cs1231-cheatsheet.tex" "cs1231-cheatsheet.pdf" "cs1231-cheatsheet" 1681840014 0
+  "/Users/haowei/codes/Cheatsheets/cs1231-cheatsheet.tex" 1681840011 48962 5984731a626f11812ff8fd208491b10d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc" 1529098226 2409 c64dab22331c83731e970f6020b4448b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1529098226 3124 3813fd4c981d99822890a2861b0d274c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -202,9 +202,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1681814497 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1681814444 7883452 6eee0b01d4e6d22afa5029502ccaf651 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "cs1231-cheatsheet.aux" 1681834632 9106 9a1829f40d114de143e908657fc8517a "pdflatex"
-  "cs1231-cheatsheet.out" 1681834632 11439 6533d154f9320fdf645677bc1a1e740d "pdflatex"
-  "cs1231-cheatsheet.tex" 1681834630 48459 b19659783b751c124fa0f4d07a3c93f9 ""
+  "cs1231-cheatsheet.aux" 1681840014 9010 648b316a9edf61175874fb4772e54de1 "pdflatex"
+  "cs1231-cheatsheet.out" 1681840014 11337 b7e5a6070f1b0c1d9ffb6bc784ae4409 "pdflatex"
+  "cs1231-cheatsheet.tex" 1681840011 48962 5984731a626f11812ff8fd208491b10d ""
   (generated)
   "cs1231-cheatsheet.aux"
   "cs1231-cheatsheet.log"

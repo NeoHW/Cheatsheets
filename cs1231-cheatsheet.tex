@@ -488,7 +488,7 @@ justification:
     \item $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$
 \end{itemize}
 
-\section{06. EQUIVALENCE RELATIONS AND PARTIAL ORDERS}
+\section{06. EQUIVALENCE RELATIONS AND PARTIAL ORDERS} %
 \subsection{reflexivity, symmetry, transitivity}
 Let $A$ be a set and $R$ be a relation on $A$.
 \begin{center}
@@ -508,13 +508,15 @@ Let $A$ be a set and $R$ be a relation on $A$.
 \subsection{equivalence classes}
 Let $A$ be a set and $R$ be an equivalence relation on $A$.
 \begin{itemize}
-    \item $[x]_R$ : \textbf{equivalence class} of $x$ with respect to $R$
+    \item $[x]_{\lnot}$ : \textbf{equivalence class} of $x$ with respect to $R$
+    \begin{itemize}
+        \item the set of all elements of A that x is related to
+    \end{itemize}
+        \centerline{$\forall x \in A, [x]_{\lnot} = \{y \in A : x R y\}$}
 
-        \centerline{$\forall x \in A, [x]_R = \{y \in A : x R y\}$}
+    \item $A / \lnot$ : The set of all equivalent classes
 
-    \item $A / R$ : The set of all equivalent classes
-
-        \centerline{$A / R = \{[x]_R : x \in A\}$}
+        \centerline{$A / R = \{[x]_{\lnot} : x \in A\}$}
 
 \end{itemize}
 $xRy \Then [x] = [y] \Then [x] \cap [y] \neq \emptyset$
@@ -522,8 +524,18 @@ $xRy \Then [x] = [y] \Then [x] \cap [y] \neq \emptyset$
 \subsection{partitions}
 \begin{itemize}
     \item a \textbf{partition} of a set $A$ is a set $\mathscr{C}$ of \textit{non-empty subsets} of $A$ such that
-        \\* $(\geq 1) \ \ \forall x \in A, \ \exists S \in \mathscr{C} (x \in S)$
-        \\* $(\leq 1) \ \ \forall x \in A, \ \forall S, S' \in \mathscr{C} (x \in S \land x \in S' \Then S = S')$
+        \\ 0. $\forall S \in \mathscr{C}, \ (\emptyset \neq S \subseteq A)$
+        \begin{itemize}
+            \item $\mathscr{C}$ is a set of nonempty subsets of $A$
+        \end{itemize}
+        1. $\forall x \in A, \ \exists S \in \mathscr{C} (x \in S)$
+        \begin{itemize}
+            \item every element of $A$ is in some element of $\mathscr{C}$
+        \end{itemize}
+        2. $\forall x \in A, \ \forall S_1, S_2 \in \mathscr{C} (x \in S_1 \land x \in S_2 \Then S_1 = S_2)$
+        \begin{itemize}
+            \item if two items of $\mathscr{C}$ have a nonempty intersection, then they are equal
+        \end{itemize}
     \item \textbf{components} : elements of a partition
     \item every partition comes from an equivalence relation
 \end{itemize}
@@ -535,14 +547,10 @@ Let $A$ be a set and $R$ be a relation on $A$.
     \begin{itemize}
         \item includes vacuously true cases (e.g. $xRy \Iff x < y$)
     \end{itemize}
-    \item $x$ and $y$ are \bf{comparable} if $\forall x, y \in A \ (xRy \lor yRx)$
     \item $R$ is a \bf{(non-strict) partial order} if $R$ is reflexive, antisymmetric and transitive.
-    \begin{itemize}
-        \item $\preccurlyeq$ - partial order
-        \item $x \prec y \Iff x \preccurlyeq y \land x \neq y$ (NOT a partial order)
-        \item Hasse diagram
-    \end{itemize}
-    \item $R$ is a \bf{(non-strict) total order} if $R$ is a partial order and $x$ and $y$ are comparable
+    \item $x$ and $y$ are \bf{comparable} if $\forall x, y \in A \ (xRy \lor yRx)$
+    \item $R$ is a \bf{(non-strict) total order} if $R$ is a partial order and every pair of elements are comparable
+    \item a smallest element of $A$ is an element $m \in A$ such that $m R x$ for all $x \in A$
 \end{itemize}
 
 \subsection{well-ordering principle}
@@ -1133,13 +1141,17 @@ For a connected weighted graph $G$ with $n$ vertices:
 
     \subsection{logic}
     \begin{itemize}
-        \item T3.2.1 - negation of a universal statement: 
+        \item negation of a universal statement: 
         \begin{itemize}
-            \item $\lnot (\forall x \in D, P(x)) \equiv \exists x \in D \mid \lnot P(x)$
+            \item $ \lnot \forall \: P(x) \iff \exists x \: \lnot P(x)$
         \end{itemize}
-        \item T3.2.2 - negation of an existential statement: 
+        \item negation of an existential statement: 
         \begin{itemize}
-            \item $\lnot (\exists x \in D \mid P(x)) \equiv \forall x \in D, \lnot P(x)$
+            \item $ \lnot \exists \: P(x) \iff \forall x \: \lnot P(x)$
+        \end{itemize}
+        \item negation for more predicates : 
+        \begin{itemize}
+            \item $ \lnot \forall x \exists y \: Q(x,y) \iff \exists x \forall y \: \lnot Q(x,y)$
         \end{itemize}
     \end{itemize}
 
@@ -1160,24 +1172,23 @@ For a connected weighted graph $G$ with $n$ vertices:
         \end{itemize} 
     \end{itemize}
 
-    \subsection{induction}
-    \begin{itemize}
-        \item L7.3.19 - If $x \in \text{WFF}^+(\Sigma)$, then assigning false to all elements of $\Sigma$ makes $x$ evaluate to false.
-        \item T7.3.20 - $\lnot( \forall x \in \text{WFF}(\Sigma), \exists y \in \text{WFF}^+(\Sigma) \ \ y \equiv x ) \equiv$
-            $\exists x \in \text{WFF}(\Sigma) \ \ \forall y \in \text{WFF}^+(\Sigma) \ \ y \not\equiv x$
-            aka $\lnot$ (not) must be included in the definition of WFF.
-    \end{itemize}
-
     \subsection{relations}
     \begin{itemize}
-        \item E9.2.11 - The equality relation $R$ on a set $A$ has equivalence classes of the form $[x] = \{y \in A : x = y \} = \{x\}$ where $x \in A$
-        \item T9.3.4 - Let $R$ be an equivalence relation on a set $A$. Then $A / R$ is a partition of A.
-        \item T9.3.5 - If $\mathscr{C}$ is a partition of $A$, then there is an equivalence relation of $R$ on $A$ such that $A/R = \mathscr{C}$.
-        \item L9.5.5 - Consider a partial order $\preccurlyeq$ on set $A$. 
+        \item E6.2.2 - The equality relation $R$ on a set $A$ has equivalence classes of the form $[x] = \{y \in A : x = y \} = \{x\}$ where $x \in A$
+        \item L6.3.11 - Let $R$ be an equivalence relation on a set $A$. Then $A / R$ is a partition of A.
+        \item - If $\mathscr{C}$ is a partition of $A$, then there is an equivalence relation of $R$ on $A$ such that $A/R = \mathscr{C}$.
+        \item L6.3.5 - Let $\lnot$ be an equivalence relation a set $A$.
+        \begin{itemize}
+            \item $x \in [x] $ for all $ x \in A$
+            \item any equivalence class is non empty
+        \end{itemize}
+        \item L6.3.6 - $\forall x,y \in A \: $ if $(x] \cap [y] \neq \emptyset$ , then $[x] = [y]$
+        \item - Consider a partial order $\preccurlyeq$ on set $A$. 
         \begin{itemize}
             \item A smallest element is minimal.
             \item There is at most one smallest element.
         \end{itemize}
+        \item T6.4 - $x \lnot y \iff [x] = [y]$ , where $\lnot$ is an equivalence relation
     \end{itemize}
     
     \subsection{graphs}
