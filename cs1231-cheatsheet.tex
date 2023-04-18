@@ -24,7 +24,7 @@
 \setlist{nosep}
 
 \pdfinfo{
-  /Title (CS1231S.pdf)
+  /Title (CS1231.pdf)
   /Creator (TeX)
   /Producer (pdfTeX 1.40.0)
   /Author (Seamus)
@@ -111,9 +111,9 @@
 \begin{center}
     \fbox{%
         \parbox{0.8\linewidth}{\centering \textcolor{black}{
-            {\Large\textbf{CS1231S}}
-            \\ \normalsize{AY20/21 sem 1}}
-            \\ {\footnotesize \textcolor{myblue}{github.com/jovyntls}} 
+            {\Large\textbf{CS1231}}
+            \\ \normalsize{AY22/23 sem 2}}
+            \\ {\footnotesize \textcolor{myblue}{github.com/NeoHW}} 
         }%
     }
 \end{center}
@@ -183,7 +183,7 @@
     \end{multicols}
 \end{center}
 
-\section{04. METHODS OF PROOF}
+\section{03. PROOFS}
 \subsection{Proof by Exhaustion/Cases}
 \begin{enumerate}
     \item list out possible cases
@@ -276,7 +276,7 @@
     \end{enumerate}
 \end{enumerate}
 
-\section{02. COMPOUND STATEMENTS}
+\section{02. PREDICATE LOGIC}
 \subsection{operations}
 \begin{itemize}
     \item[1] $\sim$ : negation (not)
@@ -356,7 +356,7 @@
     \end{multicols}
 \end{center}
 
-\section{03. QUANTIFIED STATEMENTS}
+\section{QUANTIFIED STATEMENTS}
 \begin{itemize}
     \item \bf{truth set} of $P(x) = \{x \in D \mid P(x)\}$
     \item $P(x) \Rightarrow Q(x)$ : $\forall x (P(x) \then Q(x))$
@@ -369,7 +369,7 @@
 \end{itemize}
 
 
-\section{05. SETS}
+\section{04. SETS}
 \subsection{notation}
 \begin{itemize}
     \item set roster notation [1]: $\{x_1, x_2, \dots, x_n\}$
@@ -383,13 +383,15 @@
     \item \bf{equal sets} : $A = B \iff \forall x (x \in A \iff x \in B)$ 
     \begin{itemize}
         \item $A = B \iff (A \subseteq B) \land (A \supseteq B)$
+        \item order and repetition does not matter
     \end{itemize}
-    \item \bf{empty set}, $\emptyset$ : $\emptyset \subseteq $ all sets
     \item \bf{subset} : $A \subseteq B \iff \forall x(x \in A \then x \in B)$
     \item \bf{proper subset} : $A \subsetneq B \iff (A \subseteq B) \land (A \neq B)$
     \item \bf{power set} of A : $\mathcal{P}(A) = \{X \mid X \subseteq A\}$
     \begin{itemize}
         \item $\vert \mathcal{P}(A) \vert = 2^{\vert A \vert}$, given that A is a finite set
+        \item $\mathcal{P}(\emptyset) = \{\emptyset\}$ ; $\mathcal{P}(\mathcal{P}(\emptyset)) = \{\emptyset , \{\emptyset\}\}$
+        \item $\mathcal{P}(\{1,2\}) = \{\emptyset, \{1\}, \{2\}, \{1,2\} \}$
     \end{itemize}
     \item \bf{cardinality} of a set, $\mid A \mid$ : number of distinct elements
     \item \bf{singleton} : sets of size 1
@@ -727,7 +729,7 @@ Let $\preccurlyeq$ be a partial order on a set $A$, and $c \in A$.
     \\* $\forall x, y \in A \ (x \preccurlyeq y \Then x \preccurlyeq^* y)$
 \end{center}
 
-\section{10A. COUNTING}
+\section{9. COUNTING}
 \subsection{permutations}
 \centerline{$P(n, r) = \frac{n!}{(n-r)!}$ \ \ (also $_nP_r, P^n_r$)}
 \begin{itemize}
@@ -1490,11 +1492,13 @@ For a connected weighted graph $G$ with $n$ vertices:
 
     \subsection{sets}
     \begin{itemize}
+        \item P4.2.7 - $\emptyset \subseteq $ all sets
         \item T4.1.18 - there exists a unique set with no element. It is denoted by $\emptyset$.
         \item E4.3.7 - for all $A, B$: $(A \cap B) \cup (A \backslash B) = A$
-        \item E4.3.9(1) - $A \cap B \subseteq A$
-        \item E4.3.9(2) - $A \subseteq A \cup B$
-        \item T4.6 - $A \subseteq B \iff \cup A \cup B = B$
+        \item E4.3.9(1) - ($A \cap B) \subseteq A$
+        \item E4.3.9(2) - $A \subseteq (A \cup B$)
+        \item E4.3.10 - $A \subseteq B \land B \subseteq C \rightarrow A \subseteq (B \cap C$)
+        \item T4.6 - $A \subseteq B \iff A \cup B = B$
         \item T5.3.11(1) - let $A, B$ be disjoint finite sets. Then $\vert A \cup B \vert = \vert A \vert + \vert B \vert$
         \item T5.3.11(2) - let $A_1, A_2, \dots, A_n$ be pairwise disjoint finite sets. Then $\vert A_1 \cup A_2 \cup \dots \cup A_n \vert = \vert A_1 \vert + \vert A_2 \vert + \dots + \vert A_n \vert$
         \item T5.3.12 - \bf{Inclusion-Exclusion Principle}: 
