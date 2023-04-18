@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  18 APR 2023 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  19 APR 2023 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -876,46 +876,46 @@ LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
 LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
 (Font)              scaled to size 9.40002pt on input line 122.
 LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
-(Font)              scaled to size 5.64001pt on input line 154.
+(Font)              scaled to size 5.64001pt on input line 155.
 LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
-(Font)              scaled to size 4.70001pt on input line 154.
+(Font)              scaled to size 4.70001pt on input line 155.
 LaTeX Font Info:    Font shape `OT1/qhv/m/n' will be
-(Font)              scaled to size 8.46002pt on input line 170.
+(Font)              scaled to size 8.46002pt on input line 171.
 LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
-(Font)              scaled to size 8.46002pt on input line 170.
-LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 243.
+(Font)              scaled to size 8.46002pt on input line 171.
+LaTeX Font Info:    Trying to load font information for TS1+qhv on input line 244.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 File: ts1qhv.fd 2009/09/25 v1.2 font definition file for TS1/qhv
 )
 LaTeX Font Info:    Font shape `TS1/qhv/m/n' will be
-(Font)              scaled to size 7.52002pt on input line 243.
+(Font)              scaled to size 7.52002pt on input line 244.
 LaTeX Font Info:    Font shape `OT1/qhv/b/n' will be
-(Font)              scaled to size 7.52002pt on input line 262.
+(Font)              scaled to size 7.52002pt on input line 263.
  [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
 LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 7.52002pt on input line 506.
+(Font)              scaled to size 7.52002pt on input line 524.
  [2]
 LaTeX Font Info:    Font shape `OT1/qhv/m/it' will be
-(Font)              scaled to size 4.70001pt on input line 923.
+(Font)              scaled to size 4.70001pt on input line 941.
  [3] [4] (./cs1231-cheatsheet.aux)
 Package rerunfilecheck Info: File `cs1231-cheatsheet.out' has not changed.
-(rerunfilecheck)             Checksum: F4174412E507EA3C4A6C3FB7251BE269;11385.
+(rerunfilecheck)             Checksum: 6533D154F9320FDF645677BC1A1E740D;11439.
  ) 
 Here is how much of TeX's memory you used:
- 26652 strings out of 476025
- 530365 string characters out of 5790017
- 1964388 words of memory out of 5000000
- 46483 multiletter control sequences out of 15000+600000
+ 26654 strings out of 476025
+ 530389 string characters out of 5790017
+ 1962388 words of memory out of 5000000
+ 46484 multiletter control sequences out of 15000+600000
  559988 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,80p,458b,1037s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on cs1231-cheatsheet.pdf (4 pages, 245065 bytes).
+Output written on cs1231-cheatsheet.pdf (4 pages, 244948 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 151 named destinations out of 1000 (max. 500000)
- 669 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 551 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 152 named destinations out of 1000 (max. 500000)
+ 677 words of extra memory for PDF output out of 10000 (max. 10000000)
 

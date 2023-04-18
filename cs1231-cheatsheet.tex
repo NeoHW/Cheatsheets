@@ -125,6 +125,7 @@
 \\* $\mathbb{Q}$ : rational numbers
 \\* $\mathbb{R}$ : real numbers
 \\* $\mathbb{C}$ : complex numbers
+\\* $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} \subseteq \mathbb{C}$
 
 \subsection{basic properties of integers}
 \begin{center}
@@ -333,12 +334,14 @@ justification:
 \begin{itemize}
     \item \textbf{vacuously true} : hypothesis is false
     \item \textbf{implication law} : $p \then q \equiv \lnot p \lor q$
-    \item common if/then statements:
+    \item common statements for $p \then q$ :
     \begin{itemize}
-        \item if p then q: $p \then q$
-        \item p if q: $q \then p$
-        \item p only if q: $p \then q$
-        \item p iff q: $p \iff q$
+        \item if p then q
+        \item q if p
+        \item p only if q
+        \item p iff q
+        \item p is sufficient for q
+        \item q is necessary for p
     \end{itemize}
 \end{itemize}
 
@@ -349,8 +352,8 @@ justification:
         \item \bf{converse} : $q \then p$ 
     \end{itemize} 
     \begin{center}
-        converse $\equiv$ inverse 
-        \\ statement $\equiv$ contrapositive 
+        statement $\equiv$ contrapositive 
+        \\ converse $\equiv$ inverse 
     \end{center}
 \end{multicols}
 \begin{itemize}
@@ -393,6 +396,12 @@ justification:
     \item $\forall x \in D, Q(x) \equiv Q(x_1) \land Q(x_2) \land \dots \land Q(x_n)$
     \item $\exists x \in D \mid Q(x) \equiv Q(x_1) \lor Q(x_2) \lor \dots \lor Q(x_n)$
 \end{itemize}
+\bf{relation between $\lnot, \forall, \exists$}
+\begin{itemize}
+    \item $ \lnot \forall \: P(x) \iff \exists x \: \lnot P(x)$
+    \item $ \lnot \exists \: P(x) \iff \forall x \: \lnot P(x)$
+\end{itemize}
+
 
 
 \section{04. SETS}
@@ -442,7 +451,8 @@ justification:
     \end{itemize}
 \end{itemize}
 
-\subsection{ordered pairs and cartesian products}
+\section{05. RELATIONS}
+\subsection{ordered pairs}
 \begin{itemize}
     \item \bf{ordered pair} : $(x, y)$
     \begin{itemize}
@@ -451,11 +461,13 @@ justification:
     \item \bf{Cartesian product} : $A \times B = \{(x, y) : x \in A \text{ and } y \in B\} $
     \begin{itemize}
         \item $\vert A \times B \vert = \vert A \vert \times \vert B \vert$
+        \item $\{a,b\} \times \{1,2,3\} = \{(a,1), (a,2), (a,3), (b,1), (b,2), (b,3)\}$
     \end{itemize}
     \item \bf{ordered tuples} : expression of the form $(x_1, x_2, \dots, x_n)$
+    \item defined recursively : $(x_1, x_2, \dots, x_{n+1}) = ((x_1, x_2, \dots, x_n), x_{n+1})$
+    \item $(1,2,5) \neq (2,1,5)$ although $\{1,2,5\} = \{2,1,5\}$
 \end{itemize}
 
-\section{05. RELATIONS}
 \subsection{relations}
 \begin{center}
     Let $R$ be a relation from $A$ to $B$ and $(x, y) \in A \times B$. Then:
@@ -468,6 +480,12 @@ justification:
         \item subset of $A^2$
     \end{itemize}
     \item \textbf{inverse relation}: $x R^{-1} y \Iff yRx$
+\end{itemize}
+
+\subsection{operations on relations}
+\begin{itemize}
+    \item $S \circ R = $ undergo R relation then S relation
+    \item $(S \circ R)^{-1} = R^{-1} \circ S^{-1}$
 \end{itemize}
 
 \section{06. EQUIVALENCE RELATIONS AND PARTIAL ORDERS}
@@ -1085,18 +1103,18 @@ For a connected weighted graph $G$ with $n$ vertices:
     \section{proven:}
     \subsection{number theory}
     \begin{itemize}
-        \item E1.1 - the product of 2 consecutive odd numbers is always odd.
-        \item E1.5 - the difference between 2 consecutive squares is always odd
-        \item E1.4 - the sum of any 2 even integers is even
-        \item T4.6.1 - there is no greatest integer
-        \item T8.2.8 - there are infinitely many prime numbers
-        \item T4.3.1 - for all positive integers $a$ and $b$, if $a \vert b$, then $a \leq b$.
-        \item P4.6.4 - for all integers $n$, if $n^2$ is even then $n$ is even
-        \item T4.2.1 - all integers are rational numbers
-        \item T4.2.2 - the sum of any 2 rational numbers is rational
-        \item E1.7 - there exist irrational numbers $p$ and $q$ such that $p^q$ is rational
-        \item T4.7.1 - $\sqrt{2}$ is irrational.
-        \item T4.3.2 - the only divisors of $1$ are $1$ and $-1$.
+        \item - the product of 2 consecutive odd numbers is always odd.
+        \item - the difference between 2 consecutive squares is always odd
+        \item P3.2.4 -  the square of any 2 even integers is even
+        \item - there is no greatest integer
+        \item - there are infinitely many prime numbers
+        \item - for all positive integers $a$ and $b$, if $a \vert b$, then $a \leq b$.
+        \item P3.2.8 - for all integers $n$, if $n^2$ is even then $n$ is even
+        \item - all integers are rational numbers
+        \item - the sum of any 2 rational numbers is rational
+        \item - there exist irrational numbers $p$ and $q$ such that $p^q$ is rational
+        \item - $\sqrt{2}$ is irrational.
+        \item - the only divisors of $1$ are $1$ and $-1$.
     \end{itemize}
     \textbf{divisibility}
     \begin{itemize}
@@ -1111,11 +1129,6 @@ For a connected weighted graph $G$ with $n$ vertices:
         \begin{itemize}
             \item Let $n$ be a composite positive integer. Then $n$ has a prime divisor $p \leq \sqrt{n}$.
         \end{itemize}
-    \end{itemize}
-    \textbf{base-b representation}
-    \begin{itemize}
-        \item T8.3.13 - $\forall n \in \mathbb{Z}^+, \exists ! \ell \in \mathbb{Z}_{\geq 0}$ and $a_0, a_1, \dots, a_\ell \in \{0, 1, \dots, b - 1\}$ 
-        such that <the definition of base-b representation> holds.
     \end{itemize}
 
     \subsection{logic}
