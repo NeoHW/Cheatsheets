@@ -118,7 +118,7 @@
     }
 \end{center}
 
-\section{01. PROOFS}
+\section{01. Propositional Logic}
 \subsection{sets of numbers}
     $\mathbb{N}$ : natural numbers ($\mathbb{Z}_{\geq 0}$)
 \\* $\mathbb{Z}$ : integers
@@ -235,6 +235,32 @@
     \end{enumerate}
     \item Hence $\forall n \in \mathbb{Z}_{\geq 1} P(n)$ is true by MI.
 \end{enumerate}
+
+\subsection{INDUCTION}
+\subsection{mathematical induction}
+to prove that $\forall n \in \mathbb{Z}_{\geq m} (P(n))$ is true, 
+\begin{itemize}
+    \item base step: show that $P(m)$ is true
+    \item induction step: show that $\forall k \in \mathbb{Z}_{\geq m} (P(k) \Rightarrow P(k + 1))$ is true.
+    \begin{itemize}
+        \item induction hypothesis: assumption that $P(k)$ is true 
+    \end{itemize}
+\end{itemize}
+
+\subsection{strong MI}
+to prove that $\forall n \in \mathbb{Z}_{\geq 0} (P(n))$ is true, 
+\begin{itemize}
+    \item base step: show that $P(0), P(1)$ are true
+    \item induction step: show that $\forall k \in \mathbb{Z}_{\geq 0} (P(0) \dots \land P(k+1) \Rightarrow P(k + 2))$ is true.
+\end{itemize}
+justification:
+\begin{itemize}
+    \item $P(0) \land P(1)$ by base case
+    \item $P(0) \land P(1) \then P(2)$ by induction with $k=0$
+    \item $P(0) \land P(1) \land P(2) \then P(3)$ by induction with $k=1$
+    \item $\ \ \ \dotsm $ 
+    \item we deduce that $P(0), P(1), \dots $ are all true by a series of \bf{modus ponens}
+\end{itemize}
 
 \subsection{Proofs for Sets}
 \bf{Equality of Sets (A=B)}
@@ -429,8 +455,85 @@
     \item \bf{ordered tuples} : expression of the form $(x_1, x_2, \dots, x_n)$
 \end{itemize}
 
+\section{05. RELATIONS}
+\subsection{relations}
+\begin{center}
+    Let $R$ be a relation from $A$ to $B$ and $(x, y) \in A \times B$. Then:
+    \\* $x R y$ for $(x, y) \in R$ and $x \cancel{R} y$ for $(x, y) \notin R$
+\end{center}
+\begin{itemize}
+    \item a relation from $A$ to $B$ is a subset of $A \times B$.
+    \item a \textbf{(binary) relation} on set A is a relation from A to A.
+    \begin{itemize}
+        \item subset of $A^2$
+    \end{itemize}
+    \item \textbf{inverse relation}: $x R^{-1} y \Iff yRx$
+\end{itemize}
 
-\section{06. FUNCTIONS}
+\section{06. EQUIVALENCE RELATIONS AND PARTIAL ORDERS}
+\subsection{reflexivity, symmetry, transitivity}
+Let $A$ be a set and $R$ be a relation on $A$.
+\begin{center}
+    reflexive
+    \\* $\forall x \in A \ (x R x)$
+    \\ symmetric
+    \\* $\forall x, y \in A \ (xRy \Then y R x)$
+    \\ transitive
+    \\* $\forall x, y, z \in A \ (xRy \land yRz \Then xRz)$
+\end{center}
+
+\begin{itemize}
+    \item \textbf{equivalence relation}: a relation that is reflexive, symmetric and transitive
+    \item \textbf{equivalence class}: the set of all things equivalent to x
+\end{itemize}
+
+\subsection{equivalence classes}
+Let $A$ be a set and $R$ be an equivalence relation on $A$.
+\begin{itemize}
+    \item $[x]_R$ : \textbf{equivalence class} of $x$ with respect to $R$
+
+        \centerline{$\forall x \in A, [x]_R = \{y \in A : x R y\}$}
+
+    \item $A / R$ : The set of all equivalent classes
+
+        \centerline{$A / R = \{[x]_R : x \in A\}$}
+
+\end{itemize}
+$xRy \Then [x] = [y] \Then [x] \cap [y] \neq \emptyset$
+
+\subsection{partitions}
+\begin{itemize}
+    \item a \textbf{partition} of a set $A$ is a set $\mathscr{C}$ of \textit{non-empty subsets} of $A$ such that
+        \\* $(\geq 1) \ \ \forall x \in A, \ \exists S \in \mathscr{C} (x \in S)$
+        \\* $(\leq 1) \ \ \forall x \in A, \ \forall S, S' \in \mathscr{C} (x \in S \land x \in S' \Then S = S')$
+    \item \textbf{components} : elements of a partition
+    \item every partition comes from an equivalence relation
+\end{itemize}
+
+\subsection{partial orders}
+Let $A$ be a set and $R$ be a relation on $A$.
+\begin{itemize}
+    \item $R$ is \bf{antisymmetric} if $\forall x, y \in A \ (x R y \land y R x \then x = y)$
+    \begin{itemize}
+        \item includes vacuously true cases (e.g. $xRy \Iff x < y$)
+    \end{itemize}
+    \item $x$ and $y$ are \bf{comparable} if $\forall x, y \in A \ (xRy \lor yRx)$
+    \item $R$ is a \bf{(non-strict) partial order} if $R$ is reflexive, antisymmetric and transitive.
+    \begin{itemize}
+        \item $\preccurlyeq$ - partial order
+        \item $x \prec y \Iff x \preccurlyeq y \land x \neq y$ (NOT a partial order)
+        \item Hasse diagram
+    \end{itemize}
+    \item $R$ is a \bf{(non-strict) total order} if $R$ is a partial order and $x$ and $y$ are comparable
+\end{itemize}
+
+\subsection{well-ordering principle}
+\begin{itemize}
+    \item every nonempty subset of $\mathbb{Z}_{\geq 0}$ has a smallest element.
+    \item application: recursion has a base case
+\end{itemize}
+
+\section{07. FUNCTIONS}
 \subsection{definitions}
 \begin{itemize}
     \item \bf{function/map} from A to B : assignment of each element of A to exactly one element of B.
@@ -495,241 +598,28 @@ for $f:A \to B$
 \end{itemize}
 
 
-\section{07. INDUCTION}
-\subsection{mathematical induction}
-to prove that $\forall n \in \mathbb{Z}_{\geq m} (P(n))$ is true, 
-\begin{itemize}
-    \item base step: show that $P(m)$ is true
-    \item induction step: show that $\forall k \in \mathbb{Z}_{\geq m} (P(k) \Rightarrow P(k + 1))$ is true.
-    \begin{itemize}
-        \item induction hypothesis: assumption that $P(k)$ is true 
-    \end{itemize}
-\end{itemize}
-
-\subsection{strong MI}
-to prove that $\forall n \in \mathbb{Z}_{\geq 0} (P(n))$ is true, 
-\begin{itemize}
-    \item base step: show that $P(0), P(1)$ are true
-    \item induction step: show that $\forall k \in \mathbb{Z}_{\geq 0} (P(0) \dots \land P(k+1) \Rightarrow P(k + 2))$ is true.
-\end{itemize}
-justification:
-\begin{itemize}
-    \item $P(0) \land P(1)$ by base case
-    \item $P(0) \land P(1) \then P(2)$ by induction with $k=0$
-    \item $P(0) \land P(1) \land P(2) \then P(3)$ by induction with $k=1$
-    \item $\ \ \ \dotsm $ 
-    \item we deduce that $P(0), P(1), \dots $ are all true by a series of \bf{modus ponens}
-\end{itemize}
-
-\subsection{well-ordering principle}
-\begin{itemize}
-    \item every nonempty subset of $\mathbb{Z}_{\geq 0}$ has a smallest element.
-    \item application: recursion has a base case
-\end{itemize}
-
-\subsection{RECURSION}
-a sequence is \bf{recursively defined} if the definition of $a_n$ involves $a_0, a_1, \dots, a_{n-1}$ for all but finitely many $n \in \mathbb{Z}_{\geq 0}$.
-\subsubsection{recursive definitions}
-e.g. recursive definition for $\mathbb{Z}$
-\begin{enumerate}
-    \item (\bf{base clause}) $0 \in \mathbb{Z}_{\geq 0}$
-    \item (\bf{recursion clause}) If $x \in \mathbb{Z}_{\geq 0}$, then $x + 1 \in \mathbb{Z}_{\geq 0}$
-    \item (\bf{minimality clause}) Membership for $\mathbb{Z}_{\geq 0}$ can be demonstrated by (finitely many) successive applications of the clauses above
-\end{enumerate}
-
-\subsubsection{recursion vs induction}
-\begin{itemize}
-    \item \bf{recursion} - to define the set
-    \item \bf{induction} - to show things about the set
-\end{itemize}
-
-\subsection{well-formed formulas (WFF)}
-\subsubsection{in propositional logic}
-define the set of WFF($\Sigma$) as follows
-\begin{enumerate}
-    \item (base clause) every element $\rho$ of $\Sigma$ is in WFF($\Sigma$)
-    \item (recursion clause) if $x, y$ are in WFF($\Sigma$), then $\lnot x$ and $(x \land y)$ and $(x \lor y)$ are in WFF($\Sigma$)
-    \item (minimality clause) Membership for WFF($\Sigma$) can be demonstrated by (finitely many) successive applications of the clauses above
-\end{enumerate}
-
-\section{08. NUMBER THEORY}
-\subsection{divisibility}
+\section{8. CARDINALITY} % to do
+\subsection{pigeonhole principle}
 \begin{center}
-    transitivity of divisibility
-    \\* If $a \mid b$ and $b \mid c$, then $a \mid c$.
-
-    closure lemma (non-standard name)
-    \\* Let $a, b, d, m, n \in \mathbb{Z}$. If $d \mid m$ and $d \mid n$, then $d \mid am + bn$.
-
-    division theorem
-    \\* $\forall n \in \mathbb{Z}$ and $d \in \mathbb{Z}^+$, $\exists ! q, r \in \mathbb{Z}$ s.t.
-    \\* $n = dq + r$ and $0 \leq r < d$
-    \\* $q = n\ div\ d = \lfloor n/d \rfloor$ 
-    \\* $r = n \Mod d = n - dq$
+    For any function $f$ from a finite set $X$ with $n$ elements to a finite set $Y$ with $m$ elements 
+and for any positive integer $k$, if $k < \frac{n}{m}$, then there is some $y \in Y$ 
+such that $y$ is the image of at least $k + 1$ distinct elements of $X$.
 \end{center}
-
-\subsection{base-b representation}
-\begin{center} 
-    of positive integer $n$ is
-    $(a_\ell a_{\ell - 1} \dots a_0)_b$ 
-    \\* where $\ell \in \mathbb{Z}_{\geq 0}$ and $a_0, a_1, \dots, a_\ell \in \{0, 1, \dots, b - 1\}$ 
-    \\* s.t. $n = a_\ell b^\ell + a_{\ell - 1} b^{\ell - 1} + \dots + a_0 b^0$ and $a_\ell \neq 0$
-\end{center}
-
-\subsection{greatest common divisor}
 \begin{itemize}
-    \item if $m \neq 0$ and $n \neq 0$, then $\gcd(m, n)$ exists and is positive.
+    \item A function from a finite set to a smaller finite set cannot be injective.
+    \item \textbf{presentation:}
     \begin{itemize}
-        \item gcd: \textit{Euclidean Algorithm}
-        \item integer linear combination: \textit{Extended Euclidean Algorithm}
+        \item There are $m$ <object M> (pigeons) and $n$ <object N>
+        \item Thus, by Pigeonhole Principle, ...
     \end{itemize}
 \end{itemize}
+\subsection{same cardinality} % to do
 \begin{center}
-    Bezout's Lemma: 
-    \\* For all $m, n \in \mathbb{Z}$ with $n \neq 0$, there exist $s, t \in \mathbb{Z}$ such that $\gcd(m, n) = ms + nt$.
-    \\ Euclid's Lemma: 
-    \\* Let $m, n \in Z^+$. If $p$ is prime and $p \mid mn$, then $p \mid m$ or $p \mid n$.
-\end{center}
-\begin{itemize}
-    \item (E8.4.3) $m \Mod n = 0 \Iff \gcd(m, n) = n$
-    \item (L8.4.11) $\forall x, y, r \in \mathbb{Z}$, $x \Mod y = r \Then \gcd(x, y) = \gcd(y, r)$
-\end{itemize}
-
-\subsection{prime factorization thoerem}
-\begin{itemize}
-    \item \bf{(aka Fundamental Theorem of Arithmetic)}: 
-    Every integer $n \geq 2$ has a unique prime factorization in which the prime factors are arranged in nondecreasing order.
-\end{itemize}
-
-\subsection{modular arithmetic}
-$n \Mod d$ is always non-negative.
-\begin{center}
-    Let $a,b,c \in \mathbb{Z}$ and $n \in \mathbb{Z}^+$.
-    \\ {congruence}
-        \\* $a \equiv b \ (\Mod{n}) \Iff a \Mod{n} = b \Mod{n}$
-        \\* Then $\exists k \in \mathbb{Z} \bigl( a = nk + b$ and $n \mid (a - b) \bigr)$
-    \\ {reflexivity}
-        \\* $a \equiv a \ (\Mod{n})$
-    \\ {symmetry}
-        \\* $a \equiv b \ (\Mod{n}) \then b \equiv a \ (\Mod{n})$
-    \\ {transitivity} 
-        \\* $a \equiv b \ (\Mod{n}) \land b \equiv c \ (\Mod{n}) \then a \equiv c \ (\Mod n)$
-\end{center}
-\subsubsection{addition \& multiplication}
-If $a \equiv b (\Mod{n})$ and $c \equiv d (\Mod{n})$, 
-\begin{itemize}
-    \item (P8.6.6) $a+c \equiv (b+d) (\Mod{n})$
-    \item (P8.6.13) $ac \equiv bd (\Mod{n})$
-\end{itemize}
-
-\subsubsection{additive inverse}
-$b$ is an \textit{additive inverse} of $a \Mod n \Iff a + b \equiv 0 \ (\Mod n)$.
-$b$ is an \textit{additive inverse} of $a \Mod n \Iff b \equiv -a \ (\Mod n)$.
-
-\subsubsection{multiplicative inverse}
-$b$ is a multiplicative inverse of $a \Mod n \Iff ab \equiv 1 \ (\Mod n)$.
-\begin{itemize}
-    \item If $b, b'$ are multiplicative inverses of $a$, then $b \equiv b' \ (\Mod n)$.
-    \item exists $\Iff \gcd(a, n) = 1$.
-    \begin{itemize}
-        \item $a, n$ are coprime
-    \end{itemize}
-    \item to find multiplicative inverse: \textbf{Euclidean Algorithm}
-\end{itemize}
-
-\section{09. EQUIVALENCE RELATIONS}
-\subsection{relations}
-\begin{center}
-    Let $R$ be a relation from $A$ to $B$ and $(x, y) \in A \times B$. Then:
-    \\* $x R y$ for $(x, y) \in R$ and $x \cancel{R} y$ for $(x, y) \notin R$
-\end{center}
-\begin{itemize}
-    \item a relation from $A$ to $B$ is a subset of $A \times B$.
-    \item a \textbf{(binary) relation} on set A is a relation from A to A.
-    \begin{itemize}
-        \item subset of $A^2$
-    \end{itemize}
-    \item \textbf{inverse relation}: $x R^{-1} y \Iff yRx$
-\end{itemize}
-\subsubsection{reflexivity, symmetry, transitivity}
-Let $A$ be a set and $R$ be a relation on $A$.
-\begin{center}
-    reflexive
-    \\* $\forall x \in A \ (x R x)$
-    \\ symmetric
-    \\* $\forall x, y \in A \ (xRy \Then y R x)$
-    \\ transitive
-    \\* $\forall x, y, z \in A \ (xRy \land yRz \Then xRz)$
 \end{center}
 
-\begin{itemize}
-    \item \textbf{equivalence relation}: a relation that is reflexive, symmetric and transitive
-    \item \textbf{equivalence class}: the set of all things equivalent to x
-\end{itemize}
+\section{9. COUNTABILITY} % to do
 
-\subsection{equivalence classes}
-Let $A$ be a set and $R$ be an equivalence relation on $A$.
-\begin{itemize}
-    \item $[x]_R$ : \textbf{equivalence class} of $x$ with respect to $R$
-
-        \centerline{$\forall x \in A, [x]_R = \{y \in A : x R y\}$}
-
-    \item $A / R$ : The set of all equivalent classes
-
-        \centerline{$A / R = \{[x]_R : x \in A\}$}
-
-\end{itemize}
-$xRy \Then [x] = [y] \Then [x] \cap [y] \neq \emptyset$
-
-\subsection{partitions}
-\begin{itemize}
-    \item a \textbf{partition} of a set $A$ is a set $\mathscr{C}$ of \textit{non-empty subsets} of $A$ such that
-        \\* $(\geq 1) \ \ \forall x \in A, \ \exists S \in \mathscr{C} (x \in S)$
-        \\* $(\leq 1) \ \ \forall x \in A, \ \forall S, S' \in \mathscr{C} (x \in S \land x \in S' \Then S = S')$
-    \item \textbf{components} : elements of a partition
-    \item every partition comes from an equivalence relation
-\end{itemize}
-
-\subsection{partial orders}
-Let $A$ be a set and $R$ be a relation on $A$.
-\begin{itemize}
-    \item $R$ is \bf{antisymmetric} if $\forall x, y \in A \ (x R y \land y R x \then x = y)$
-    \begin{itemize}
-        \item includes vacuously true cases (e.g. $xRy \Iff x < y$)
-    \end{itemize}
-    \item $x$ and $y$ are \bf{comparable} if $\forall x, y \in A \ (xRy \lor yRx)$
-    \item $R$ is a \bf{(non-strict) partial order} if $R$ is reflexive, antisymmetric and transitive.
-    \begin{itemize}
-        \item $\preccurlyeq$ - partial order
-        \item $x \prec y \Iff x \preccurlyeq y \land x \neq y$ (NOT a partial order)
-        \item Hasse diagram
-    \end{itemize}
-    \item $R$ is a \bf{(non-strict) total order} if $R$ is a partial order and $x$ and $y$ are comparable
-\end{itemize}
-
-\subsection{min and max}
-Let $\preccurlyeq$ be a partial order on a set $A$, and $c \in A$.
-\begin{itemize}
-    \item $c$ is a \bf{minimal element} if $\forall x \in A \ (x \preccurlyeq c \Then c = x)$
-    \begin{itemize}
-        \item nothing is strictly below it
-    \end{itemize}
-    \item $c$ is a \bf{maximal element} if $\forall x \in A \ (c \preccurlyeq x \Then c = x)$
-    \begin{itemize}
-        \item nothing is strictly above it
-    \end{itemize}
-    \item $c$ is the \bf{smallest element} or \bf{minimum element} if $\forall x \in a \ (c \preccurlyeq x)$.
-    \item $c$ is the \bf{largest element} or \bf{maximum element} if $\forall x \in a \ (x \preccurlyeq c)$.
-\end{itemize}
-
-\subsubsection{linearization}
-\begin{center}
-    Let $A$ be a set and $\preccurlyeq$ be a partial order on $A$. 
-    \\* Then there exists a total order $\preccurlyeq^*$ on $A$ such that 
-    \\* $\forall x, y \in A \ (x \preccurlyeq y \Then x \preccurlyeq^* y)$
-\end{center}
-
-\section{9. COUNTING}
+\section{10. COUNTING}
 \subsection{permutations}
 \centerline{$P(n, r) = \frac{n!}{(n-r)!}$ \ \ (also $_nP_r, P^n_r$)}
 \begin{itemize}
@@ -754,21 +644,6 @@ Let $\preccurlyeq$ be a partial order on a set $A$, and $c \in A$.
     \\* $= \frac{n!}{n_1!n_2!\dots n_k!}$
 \end{center}
 
-\subsection{pigeonhole principle}
-\begin{center}
-    For any function $f$ from a finite set $X$ with $n$ elements to a finite set $Y$ with $m$ elements 
-and for any positive integer $k$, if $k < \frac{n}{m}$, then there is some $y \in Y$ 
-such that $y$ is the image of at least $k + 1$ distinct elements of $X$.
-\end{center}
-\begin{itemize}
-    \item A function from a finite set to a smaller finite set cannot be injective.
-    \item \textbf{presentation:}
-    \begin{itemize}
-        \item There are $m$ <object M> (pigeons) and $n$ <object N>
-        \item Thus, by Pigeonhole Principle, ...
-    \end{itemize}
-\end{itemize}
-
 \subsection{combinations}
 \begin{center}
     $\binom{n}{r} = \frac{n!}{r! (n-r)!}$ (also $C(n, r)$, $_nC_r$, $C_{n,r}$, $^nC_r$)
@@ -787,86 +662,6 @@ such that $y$ is the image of at least $k + 1$ distinct elements of $X$.
 \begin{center}
     $(a + b)^n = \sum^n_{k=0} \binom{n}{k} a^{n-k}b^k$
     \\* binomial coefficient: $\binom{n}{k}$
-\end{center}
-
-\section{10B. PROBABILITY}
-
-\subsection{probability}
-Let $S$ be a sample space. For all events $A$ and $B$ in $S$, a \textit{probability function} $P$ satisfies the following axioms:
-\begin{enumerate}
-    \item $0 \leq P(A) \leq 1$
-    \item $P(\emptyset)=0$ and $P(S) = 1$
-    \item $(A \cap B = \emptyset) \Then \big[P(A \cup B) = P(A) + P(B)\big]$
-    \item $P(\bar{A}) = 1-P(A)$
-    \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
-\end{enumerate}
-
-\subsection{expected value}
-For possible outcomes $a_1, a_2, \dots, a_n$ which occur with probabilities $p_1, p_2, \dots, p_n$, the \textbf{expected value} is
-\centerline{$\sum^n_{k=1} = a_kp_k$}
-\begin{itemize}
-    \item \textbf{linearity} of expectation
-    \begin{itemize}
-        \item $E[X+Y] = e[X] + E[Y]$
-        \item $E \left[ \sum\limits^n_{i=1}c_i\cdot X_i \right] = \sum\limits^n_{i=1}(c_i \cdot E[X_i])$
-    \end{itemize}
-\end{itemize}
-
-
-\subsection{conditional probability}
-\begin{tightcenter}
-    The conditional probability of $A$ given $B$,
-    \\* $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
-\end{tightcenter}
-probability tree:
-    \begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
-        \node[fill, circle, minimum size=1mm, inner sep=0] (O) at (0,1) {};
-        \node[] (B1) at (2,1.3) {$B_1$};
-        \node[] (B1c) at (2, 0.7) {$B_1^c$};
-        \node[label=right:{$B_2 \rightarrow P(B_1^c \cap B_2) = \dots$}, fill, circle, minimum size=1mm, inner sep=0] (B2) at (5, 1.1) {};
-        \node[label=right:{$B_2^c \rightarrow P(B_1^c \cap B_2^c) = \dots$}, fill, circle, minimum size=1mm, inner sep=0] (B2c) at (5, 0.4) {};
-        \draw (O)  -- node[above, sloped] {\tiny{$P(B_1) = \frac{1}{3}$}} (B1);
-        \draw (O) -- node[below, sloped] {\tiny{$P(B_1^c) = \frac{2}{3}$}} (B1c);
-        \draw (B1c) -- node[above, sloped] {\tiny{$P(B_2\mid B_1^c)$}} (B2);
-        \draw (B1c) -- node[below, sloped] {\tiny{$P(B_2^c\mid B_1^c)$}} (B2c);
-    \end{tikzpicture}
-
-\subsection{Bayes' theorem}
-Suppose a sample space $S$ is a union of mutually disjoint events $B_1, B_2, \dots, B_n$ and $A$ is an event in $S$.
-\\* For $k \in \mathbb{Z}$ and $1 \leq k \leq n$, 
-\begin{center}
-    $P(B_k\mid A) = \frac{P(A \mid B_k) \cdot P(B_k)}{\sum\limits^n_{i=1}\big(P(A \mid B_i) \cdot P(B_i)\big)}$
-\end{center}
-
-\subsubsection{application of Bayes' theorem}
-\begin{center}
-    $P(B_1 \mid A) = \frac{P(A \mid B_1) \cdot P(B_1)}{P(A \mid B_1) \cdot P(B_1) + P(A \mid B_2) \cdot P(B_2)}$
-\end{center}
-Let $A$ be the event that the person test positive for a disease.
-\\* $B_1$: the person actually has the disease.
-\\* $B_2$: the person does not have the disease.
-\begin{tightcenter}
-    \begin{multicols}{2}
-        true positives: $P(B_1\mid A)$
-        \\ false positives: $P(A \mid B_2)$
-        \\ false negatives: $P(\bar{A} \mid B_1)$
-        \\ true negatives: $P(\bar{A} \mid B_2)$
-    \end{multicols}
-\end{tightcenter}
-
-\subsection{independent events}
-\begin{center}
-    $A$ and $B$ are \textbf{independent} \textit{iff}
-    \\* $P(A \cap B) = P(A) \cdot P(B)$
-
-    $A$, $B$ and $C$ are \textbf{pairwise independent} \textit{iff}
-    \\* 1. $P(A \cap B) = P(A) \cdot P(B)$
-    \\* 2. $P(B \cap C) = P(B) \cdot P(C)$
-    \\* 3. $P(A \cap C) = P(A) \cdot P(C)$
-    
-    $A$, $B$ and $C$ are \textbf{mutually independent} \textit{iff}
-    \\* 1. $A$, $B$ and $C$ are pairwise independent
-    \\* 2. $P(A \cap B \cap C) = P(A) \cdot P(B) \cdot P(C)$
 \end{center}
 
 \section{11. GRAPHS}
@@ -926,12 +721,8 @@ Let $A$ be the event that the person test positive for a disease.
         \item nonempty set $V$ of \textit{vertices}
         \item a set $E$ of \textit{directed edges} (ordered pair of vertices)
     \end{itemize}
-    \item $e = (v, w)$ for an directed edge $E$ from vertex $v$ to vertex $w$
+    \item $e = (v, w)$ : an directed edge $E$ from vertex $v$ to vertex $w$
 \end{itemize}
-
-\begin{center}
-    
-\end{center}
 
 \subsubsection{simple graph}
 \begin{itemize}
@@ -943,16 +734,6 @@ Let $A$ be the event that the person test positive for a disease.
     \item a complete graph on $n$ vertices, $n>0$, denoted $K_n$, is a simple graph with $n$ vertices and exactly one edge connecting each pair of distinct vertices
 \end{itemize}
 
-\subsubsection{bipartite graph}
-\begin{itemize}
-    \item a simple graph whose vertices can be divided into two disjoint sets $U$ and $V$ such that every edge connects a vertex in $U$ to one in $V$
-    \item \textbf{complete bipartite graph:} $K_{m, n}$
-    \begin{itemize}
-        \item bipartite graph on two disjoint sets $U$ and $V$ such that every vertex in $U$ connects to every vertex in $V$
-        \item denoted $K_{m, n}$ where $\abs{U} = m, \abs{V} = n$
-    \end{itemize}
-\end{itemize}
-
 \subsubsection{subgraph of a graph}
 $H$ is a subgraph of $G \Iff$ 
 \begin{itemize}
@@ -961,18 +742,7 @@ $H$ is a subgraph of $G \Iff$
     \item every edge in $H$ has the same endpoints as it has in $G$
 \end{itemize}
 
-\subsection{degree}
-\begin{itemize}
-    \item \textbf{degree} of $v, deg(v) =$ number of edges incident on $v$
-    \item \textbf{total degree} of $G$ = sum of the degrees of all vertices of $G$
-\end{itemize}
-\centerline{total degree of $G$ = $2 \times $ (number of edges of $G$)}
-\begin{itemize}
-    \item (C10.1.2) the total degree of a graph is even
-    \item (P10.1.3) in any graph there are an even number of vertices of odd degree
-\end{itemize}
-
-\subsection{trails, paths and circuits}
+\subsection{paths and walks}
 Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
 \begin{itemize}
     \item \textbf{walk} (from $v$ to $w$): a finite alternating sequence of adjacent vertices and edges of $G$.
@@ -980,22 +750,25 @@ Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
         \item e.g. $v_0e_1v_1e_2\dots v_{n-1}e_nv_n$
         \item \textbf{length} of walk: the number of edges, $n$
     \end{itemize}
-    \item a \textbf{trivial walk} from $v$ to $v$ consists of the single vertex $v$
-    \item \textbf{trail} (from $v$ to $w$): a walk from $v$ to $w$ that does not contain a repeated edge
     \item \textbf{path} (from $v$ to $w$): a trail that does not contain a repeated vertex
     \item \textbf{closed walk}: walk that starts and ends at the same vertex
+\end{itemize}
+
+\subsection{cycles} % to do
+\begin{itemize}
     \item \textbf{circuit/cycle}: an undirected graph $G(V, E)$ where 
-        \begin{itemize}
-            \item $V = \{x_1, x_2, \dots, x_n\}$
-            \item $E = \scriptstyle \{\{x_1, x_2\}, \{x_2, x_3\}, \dots, \{x_{n-1}, x_n\}, \{x_n, x_1\}\}$
-            \item $n \in \mathbb{Z}_{\geq 3}$
-            \item aka a closed walk that does not contain a repeated edge
-        \end{itemize}
+    \begin{itemize}
+        \item $V = \{x_1, x_2, \dots, x_n\}$
+        \item $E = \scriptstyle \{\{x_1, x_2\}, \{x_2, x_3\}, \dots, \{x_{n-1}, x_n\}, \{x_n, x_1\}\}$
+        \item $n \in \mathbb{Z}_{\geq 3}$
+        \item aka a closed walk that does not contain a repeated edge
+    \end{itemize}
     \item \textbf{simple circuit/cycle}: does not have any other repeated vertex except the first and last
     \item (an undirected graph is) \textbf{cyclic} if it contains a loop/cycle
 \end{itemize}
 
-\subsection{connectedness}
+
+\subsection{connectedness} 
 \begin{itemize}
     \item vertices $v$ and $w$ are connected $\Iff \exists$ a walk from $v$ to $w$
     \item graph $G$ is connected $\Iff \forall$ vertices $v, w \in V, \exists$ a walk from $v$ to $w$ 
@@ -1009,25 +782,6 @@ Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
         \item $H$ is connected
         \item no connected subgraph of $G$ has $H$ as a subgraph and contains vertices or edges that are not in $H$
     \end{enumerate}
-\end{itemize}
-
-\subsection{Euler circuit}
-\begin{itemize}
-    \item \textbf{Euler circuit}: a circuit that contains every vertex and traverses every edge of $G$ exactly once
-    \item \textbf{Eulerian graph}: graph that contains an Euler circuit
-    \begin{center}
-        \textbf{T10.2.3} 
-        \\* Euler circuit $\Iff$ connected and every vertex has positive even degree
-        \\ \textbf{T10.2.4} 
-        \\* Eulerian graph $\Iff$ every vertex has positive even degree
-    \end{center}
-    \item \textbf{Euler trail} (from $v$ to $w$): a sequence of adjacent edges and vertices that starts at $v$, ends at $w$, 
-        and passes through every vertex of $G$ at least once, and traverses every edge of $G$ exactly once.
-    \begin{center}
-        \textbf{C10.2.5}
-        \\* $\exists$ Euler trail $\Iff$ $G$ is connected; $v, w$ have odd degree;
-        \\* all other vertices of $G$ have positive even degree
-    \end{center}
 \end{itemize}
 
 \subsection{Hamiltonian circuit}
@@ -1046,104 +800,6 @@ Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
     \end{enumerate}
 \end{itemize}
 
-\subsection{matrix representations of graphs}
-\begin{itemize}
-    \item \textbf{equal matrices} $\Iff$ A and B are the same size and $a_{ij} = b_{ij}$ for all $i = 1, 2, \dots, m$ and $i = 1, 2, \dots, n$
-    \item \textbf{square matrix}: equal number of rows and columns
-    \item \textbf{main diagonal}: all entries $a_{11}, a_{22}, \dots, a_{nn}$
-    \item \textbf{symmetric matrix} $\Iff \forall i, j \in \mathbb{Z}^+_{\leq n} (a_{ij} = a_{ji})$
-\end{itemize}
-
-\subsubsection{adjacency matrix}
-\begin{center}
-The adjacency matrix of a \textbf{directed graph} $G$ 
-    \\* is the $n \times n$ matrix $A = (a_{ij})$ over the set of non-negative integers such that
-    \\* $a_{ij}$ = number of \textbf{arrows} from $v_i$ to $v_j$ $\forall i, j = 1, 2, \dots, n$
-
-
-    \setlength{\columnseprule}{0pt} 
-    \begin{multicols}{2}
-        
-
-        \ 
-        \\ $A =$ \tiny $\begin{bNiceArray}{ccc}%
-            [first-col,
-             first-row,
-             code-for-first-col = \color{black},
-             code-for-first-row = \color{black}]
-              & v_1 & v_2 & v_3 \\ 
-             v_1 & 1 & 0 & 0 \\
-             v_2 & 1 & 1 & 2 \\
-             v_3 & 1 & 0 & 0 \\
-           \end{bNiceArray}$
-    \end{multicols}
-
-    \ 
-\\ The adjacency matrix of an \textbf{undirected graph} $G$ 
-    \\* is the $n \times n$ matrix $A = (a_{ij})$ over the set of non-negative integers such that
-    \\* $a_{ij}$ = number of \textbf{edges} from $v_i$ to $v_j$ $\forall i, j = 1, 2, \dots, n$
-    \\ \ 
-
-    \begin{multicols}{2}
-        \begin{tikzpicture}[scale=0.9, every node/.style={transform shape}]
-            \node[label=right:{$v_4$}, fill, circle, minimum size=1mm, inner sep=0] (v4) at (0,0) {};
-            \node[label=left:{$v_1$}, fill, circle, minimum size=1mm, inner sep=0] (v1) at (0,1) {};
-            \node[label=right:{$v_2$}, fill, circle, minimum size=1mm, inner sep=0] (v2) at (1,1) {};
-            \node[label=right:{$v_3$}, fill, circle, minimum size=1mm, inner sep=0] (v3) at (1,0) {};
-            \draw (v4) -- (v1) -- (v2) -- (v4) -- (v2);
-            \draw (v3) to[out=30, in=300] node[right] {} (v2);
-            \draw (v2) to[out=250, in=150] node[left] {} (v3);
-            \draw (v4) to[in=210,out=150, loop] node[below] {} (v4);
-        \end{tikzpicture}
-
-        $A =$ \tiny $\begin{bNiceArray}{cccc}%
-            [first-col,
-            first-row,
-            code-for-first-col = \color{black},
-            code-for-first-row = \color{black}]
-            & v_1 & v_2 & v_3 & v_4 \\ 
-            v_1 & 0 & 1 & 0 & 1 \\
-            v_2 & 1 & 0 & 2 & 1 \\
-            v_3 & 0 & 2 & 0 & 0 \\
-            v_4 & 1 & 1 & 0 & 1
-        \end{bNiceArray}$
-    \end{multicols}  
-    
-\end{center}
-
-\subsubsection{identity matrix}
-\begin{center}
-    The $n \times n$ identity matrix,
-    \\* $I_n = (\delta_{ij}) = \begin{cases}
-        1, \text{if } i = j
-        \\ 0, \text{if } i \neq j
-    \end{cases}$ for all $i, j = 1, 2, \dots, n$
-\end{center}
-
-\subsection{matrix multiplication}
-\subsubsection{scalar product}
-\begin{center}
-$
-    [a_{i1} \; a_{i2} \; \dots \; a_{in}]
-    \begin{bmatrix} b_{1j} \\ b_{2j} \\ \vdots \\b_{nj}\end{bmatrix}
-    = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{in}b_{nj}
-$
-\end{center}
-\subsubsection{matrix product}
-\begin{center}
-    Let $A = (a_{ij})$ be an $m \times k$ matrix and $B = (b_{ij})$ be a $k \times n$ matrix with real entries.
-    \\* $AB = (c_{ij}) = \sum^k_{r=1} a_{ir}b_{rj}$
-    \\ \ 
-    \\ $\times$ commutative \quad $\checkmark$ associative
-\end{center}
-
-\subsubsection{nth power of a matrix}
-\begin{center}
-    For any $n \times n$ matrix \textbf{A}, the powers of A are defined as follows:
-    \\* $A^0 = I$ where $I$ is the $n \times n$ identity matrix
-    \\* $A^n = A A^{n-1} \quad \forall n \in \mathbb{Z}_{\geq 1}$
-\end{center}
-
 \subsubsection{counting walks of length N}
 \begin{center}
     number of walks of length $n$ from $v_i$ to $v_j$ 
@@ -1161,25 +817,9 @@ Let $G = (V_G, E_G)$ and $G' = (V_{G'}, E_{G'})$ be two graphs.
     \\* $v$ is an endpoint of $e \Iff g(v)$ is an endpoint of $h(e)$.
 \end{center}
 
-\subsection{planar graph}
+\section{11. TREES}
 \begin{itemize}
-    \item a graph that can be drawn on a two-dimensional plane without edges crossing.
-    \begin{itemize}
-        \item divides a plane into \textit{regions/faces} (includes 'outside' the graph)
-    \end{itemize}
-\end{itemize}
-    \begin{center}
-        
-        \textbf{Euler's formula}: 
-        \\* For a connected planar simple graph $G = (V, E)$ with $e = \abs{E}$ and $v = \abs{V}$ and $f$ faces,
-        \\* $f = e - v + 2$
-        \\* \textbf{Kuratowski's Theorem}
-        \\* A finite graph is planar $\Iff$ does not contain a subgraph that is a subdivision of the complete graph $K_5$ or the complete bipartite graph $K_3$
-    \end{center}
-
-\subsection{trees}
-\begin{itemize}
-    \item \textbf{tree} $\Iff$ graph that is circuit-free and connected
+    \item \textbf{tree} is a \textbf{connected acyclic undirected} graph
     \begin{itemize}
         \item \textbf{(L10.5.4)} If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
     \end{itemize}

@@ -1167,12 +1167,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvr.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvr.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvr.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvb.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvb.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tex-gyre/ts1qhv.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qhvr.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvb.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-rm.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc
@@ -1181,7 +1181,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/tex-gyre/rm-qhvri.tfm
 INPUT cs1231-cheatsheet.aux
 INPUT ./cs1231-cheatsheet.out
 INPUT ./cs1231-cheatsheet.out
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
