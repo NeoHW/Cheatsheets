@@ -562,8 +562,13 @@ Let $A$ be a set and $R$ be a relation on $A$.
 \section{07. FUNCTIONS}
 \subsection{definitions}
 \begin{itemize}
-    \item \bf{function/map} from A to B : assignment of each element of A to exactly one element of B.
+    \item \bf{function/map} from A to B : each element of A exactly $f$-related to one element of B.
         \begin{itemize}
+            \item \bf{Important} : $(x,y) \in f \iff y = f(x)$
+            \item every element in A $f$-related to at least one of B
+            $ \forall x \in A \: \exists y \in B \:\: (x,y) \in f$
+            \item every element in A $f$-related to at most one of B
+            $ \forall x \in A \: \exists y_1,y_2 \in B \:\: ((x,y_1) \in f \land (x,y_1) \in f \then y_1 = y_2)$
             \item $f:A \to B$ : "$f$ is a function from $A$ to $B$"
             \item $f:x \to y$ : "$f$ maps $x$ to $y$"
             \item \bf{domain} of f = $A$
@@ -575,7 +580,7 @@ Let $A$ be a set and $R$ be a relation on $A$.
         \begin{itemize}
             \item $\text{id}_\text{A} : x \to x$ 
             \item range = domain = codomain = $A$
-            \item (E6.1.24) $f \circ \text{id}_\text{A} = f$ and $\text{id}_\text{A} \circ f = f$
+            \item (P7.4.13) $f \circ \text{id}_\text{A} = f$ and $\text{id}_\text{A} \circ f = f$
         \end{itemize}
         \item \bf{well-defined function} : every element in the domain is assigned to exactly one element in the codomain
 \end{itemize}
@@ -588,7 +593,7 @@ Let $A$ be a set and $R$ be a relation on $A$.
 \begin{itemize}
     \item $(g \circ f)(x) = g(f(x))$
     \item for $(g \circ f)$ to be well defined, codomain of $f$ must be equal to the domain of $g$
-    \item $\times$ commutative
+    \item $\times$ commutative $(g \circ f)(x) \neq (f \circ g)(x)$
     \item $\checkmark$ \textbf{associative} - (T6.1.26) $f \circ (g \circ h) = (f \circ g) \circ h$
 \end{itemize}
 \subsection{image \& pre-image}
@@ -606,12 +611,12 @@ for $f:A \to B$
     \end{itemize}
     \item \bf{injective} : one-to-one
     \begin{itemize}
-        \item $\forall x, x'\in A (f(x) = f(x') \Rightarrow x = x')$
+        \item $\forall x_1, x_2\in A \ (f(x_1) = f(x_2) \Rightarrow x_1 = x_2)$
         \item injective test: $\forall X \subseteq A, X \subseteq f^{-1}(f(X))$
     \end{itemize}
     \item \bf{bijective} : both surjective \& injective
     \begin{itemize}
-        \item bijective $\Iff$ has an inverse (T6.2.28)
+        \item if $f$ is a bijection $A \then B$ , then $f^{-1}$ is a bijection $B \then A$ (P7.4.3)
     \end{itemize}
 \end{itemize}
 \subsubsection{inverse}
@@ -1189,6 +1194,7 @@ For a connected weighted graph $G$ with $n$ vertices:
             \item There is at most one smallest element.
         \end{itemize}
         \item T6.4 - $x \lnot y \iff [x] = [y]$ , where $\lnot$ is an equivalence relation
+        \item P7.4.3 - if $f$ is a bijection $A \then B$ , then $f^{-1}$ is a bijection $B \then A$
     \end{itemize}
     
     \subsection{graphs}
