@@ -886,15 +886,10 @@ Let $G = (V_G, E_G)$ and $G' = (V_{G'}, E_{G'})$ be two graphs.
 \begin{itemize}
     \item \textbf{tree} is a \textbf{connected acyclic undirected} graph
     \begin{itemize}
-        \item \textbf{(L10.5.4)} If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
+        \item If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
     \end{itemize}
-    \item \textbf{trivial tree}: graph that comprises a single vertex
-    \item \textbf{forest} $\Iff$ graph is circuit-free and not connected
-    \begin{itemize}
-        \item a group of trees
-    \end{itemize}
-    \item \textbf{terminal vertex}: a vertex of degree 1
-    \item \textbf{internal vertex}: a vertex of degree greater than 1
+    \item \textbf{terminal vertex / leaf}: vertex with no child
+    \item \textbf{internal vertex / parent}: vertex that is not terminal
 \end{itemize}
 
 \begin{center}
@@ -940,10 +935,8 @@ Let $G = (V_G, E_G)$ and $G' = (V_{G'}, E_{G'})$ be two graphs.
 
 \subsection{rooted trees}
 \begin{itemize}
-    \item \textbf{rooted tree}: a tree in which there is one vertex that is distinguished from the others and is called the root.
-    \item \textbf{level} (of a vertex): the number of edges along the unique path between it and the root
-    \item \textbf{height} (of a rooted tree): the maximum level of any vertex of the tree
-    \item children, parent, siblings, ancestor, decendant
+    \item \textbf{rooted tree}: a tree in which there a distinguished vertex called the root.
+    \item \textbf{height} (of a rooted tree): length of a longest path between root and some vertex
 \end{itemize}
 
 \subsubsection{binary tree}
@@ -1241,24 +1234,21 @@ For a connected weighted graph $G$ with $n$ vertices:
         \item if $f$ is surjective: range($f$) $\in$ codomain $\in$ range($f$)
     \end{itemize}
     
-    \subsection{graphs}
+    \subsection{graphs and trees}
     \begin{itemize}
         \item - Let $G$ be a graph.
         \begin{itemize}
             \item - If $G$ is connected, then any two distinct vertices of $G$ can be connected by a path
-            \item - If vertices $v$ and $w$ are part of a circuit in $G$ and one edge is removed from the circuit, then there still exists a trail from $v$ to $w$ in $G$.
+            \item T12.1.4 - A connected undirected graph $G$ is a tree $\iff$ removing any edge disconnects $G$
             \item - If $G$ is connected and $G$ contains a circuit, then an edge of the circuit can be removed without disconnecting $G$.
         \end{itemize}
-        \item - Any tree with $n$ vertices $(n>0)$ has $n-1$ edges.
-        \item - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
-        \item - If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
+        \item T12.1.4 - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
+        \item T12.1.6 - Let $G$ be finite tree with $>$ 1 vertex, $|E(G)| = |V(G)| - 1$
+        \item T12.1.8 - Let $G$ be a connected cyclic finite undirected graph, then $|E(G)| \geq |V(G)|$
+        \item P12.2.3 - Let $T$ be a finite rooted tree of heigh $h$ in which every vertex has at most 2 children, then $T$ has at most $2^h$ terminal vertices.
+        \item P12.2.5 - Let $T$ be a finite rooted tree in which every vertex has exactly 2 children. If $T$ has exactly $t$ terminal vertices, then $T$ has exactly $t-1$ internal vertices and thus exactly $2t-1$ vertices in total
+        \item Tut12.9 - Let $T$ be a finite tree with at least 2 vertices. $T$ has at least 2 vertices that are each in exactly one edge.
         \item - If $T$ is a full binary tree with $k$ internal vertices, then $T$ has a total of $2k + 1$ vertices and has $k+1$ terminal vertices.
-        \item - For non-negative integers $h$, if $T$ is any binary tree with height $h$ and $t$ terminal vertices, then $t \leq 2^h$.
-        \item - 
-        \begin{enumerate}
-            \item Every connected graph has a spanning tree.
-            \item Any two spanning trees for a graph have the same number of edges
-        \end{enumerate} 
     \end{itemize}
 
 \begin{center}
