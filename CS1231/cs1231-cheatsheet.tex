@@ -747,9 +747,6 @@ if $ r > n$ , 0 ways
 \end{center}
 
 \section{11. GRAPHS}
-\begin{itemize}
-    \item mathematical structures used to model pairwise relations between objects
-\end{itemize}
 \subsection{types of graphs}
 \begin{multicols}{2}
 \begin{center}
@@ -827,33 +824,33 @@ $H$ is a subgraph of $G \Iff$
 \subsection{paths and walks}
 Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
 \begin{itemize}
-    \item \textbf{walk} (from $v$ to $w$): a finite alternating sequence of adjacent vertices and edges of $G$.
+    \item \textbf{path} (from $v$ to $w$): links two vertices in a graph via a sequence of edges, with no repeated vertices
+    \\($\{x_0, x_1, \dots , x_l\}, \{x_0x_1, x_1x_2, \dots , x_{l-1}x_l\}$) where $v = x_0$ and $w = x_l$
     \begin{itemize}
-        \item e.g. $v_0e_1v_1e_2\dots v_{n-1}e_nv_n$
-        \item \textbf{length} of walk: the number of edges, $n$
+        \item \textbf{length} of walk: the number of edges, $l$
+        \item each vertex in a path is in at most 2 edges in the path
     \end{itemize}
-    \item \textbf{path} (from $v$ to $w$): a trail that does not contain a repeated vertex
-    \item \textbf{closed walk}: walk that starts and ends at the same vertex
+    \item If there is a path P between $u$ and $v$, and path G between $v$ and $w$. Then there is a path between $u$ and $w$
 \end{itemize}
 
-\subsection{cycles} % to do
+\subsection{cycles}
 \begin{itemize}
     \item \textbf{circuit/cycle}: an undirected graph $G(V, E)$ where 
     \begin{itemize}
-        \item $V = \{x_1, x_2, \dots, x_n\}$
-        \item $E = \scriptstyle \{\{x_1, x_2\}, \{x_2, x_3\}, \dots, \{x_{n-1}, x_n\}, \{x_n, x_1\}\}$
+        \item $V = \{x_1, x_2, \dots, x_l\}$
+        \item $E = \scriptstyle \{\{x_1, x_2\}, \{x_2, x_3\}, \dots, \{x_{l-1}, x_l\}, \{x_l, x_1\}\}$
         \item $n \in \mathbb{Z}_{\geq 3}$
-        \item aka a closed walk that does not contain a repeated edge
     \end{itemize}
     \item \textbf{simple circuit/cycle}: does not have any other repeated vertex except the first and last
-    \item (an undirected graph is) \textbf{cyclic} if it contains a loop/cycle
+    \item An undirected graph is \textbf{cyclic} if it contains a loop/cycle
+    \item An undirected graph is with no loop is cyclic iff it has two vertices between which there are two distinct paths
 \end{itemize}
 
 
 \subsection{connectedness} 
 \begin{itemize}
-    \item vertices $v$ and $w$ are connected $\Iff \exists$ a walk from $v$ to $w$
-    \item graph $G$ is connected $\Iff \forall$ vertices $v, w \in V, \exists$ a walk from $v$ to $w$ 
+    \item vertices $v$ and $w$ are connected $\Iff \exists$ a path from $v$ to $w$
+    \item graph $G$ is connected $\Iff \forall$ vertices $v, w \in V, \exists$ a path from $v$ to $w$ 
 \end{itemize}
 \subsubsection{connected component}
 \begin{itemize}
@@ -864,22 +861,8 @@ Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
         \item $H$ is connected
         \item no connected subgraph of $G$ has $H$ as a subgraph and contains vertices or edges that are not in $H$
     \end{enumerate}
-\end{itemize}
-
-\subsection{Hamiltonian circuit}
-\begin{itemize}
-    \item \textbf{Hamiltonian circuit} (for $G$): a \textit{simple circuit} that includes every vertex of $G$.
-    \begin{itemize}
-        \item does not need to include all the edges of $G$ (unlike Euler circuit)
-    \end{itemize}
-    \item \textbf{Hamilton(ian) graph}: contains a Hamiltonian circuit
-    \item If $G$ is a Hamiltonian circuit, then $G$ has subgraph $H$ where:
-    \begin{enumerate}
-        \item $H$ contains every vertex of G
-        \item $H$ is connected
-        \item $H$ has the same number of edges as vertices
-        \item every vertex of $H$ has degree 2
-    \end{enumerate}
+    \item Let G be an undirected graph, then every vertex $v$ in $G$ is in some connected component of $G$
+    \item Let $u,v$ be vertices in an undirected graph $G$. Then there is a path between $u$ and $v$ in G $\iff$ there is a connected component $G$ that has both $u$ and $v$ in it
 \end{itemize}
 
 \subsubsection{counting walks of length N}
@@ -1260,19 +1243,18 @@ For a connected weighted graph $G$ with $n$ vertices:
     
     \subsection{graphs}
     \begin{itemize}
-        \item L10.2.1 - Let $G$ be a graph.
+        \item - Let $G$ be a graph.
         \begin{itemize}
-            \item L10.2.1a - If $G$ is connected, then any two distinct vertices of $G$ can be connected by a path
-            \item L10.2.1b - If vertices $v$ and $w$ are part of a circuit in $G$ and one edge is removed from the circuit, then there still exists a trail from $v$ to $w$ in $G$.
-            \item L10.2.1c - If $G$ is connected and $G$ contains a circuit, then an edge of the circuit can be removed without disconnecting $G$.
+            \item - If $G$ is connected, then any two distinct vertices of $G$ can be connected by a path
+            \item - If vertices $v$ and $w$ are part of a circuit in $G$ and one edge is removed from the circuit, then there still exists a trail from $v$ to $w$ in $G$.
+            \item - If $G$ is connected and $G$ contains a circuit, then an edge of the circuit can be removed without disconnecting $G$.
         \end{itemize}
-        \item L10.5.1 - Any non-trivial tree has at least one vertex of degree 1.
-        \item T10.5.2 - Any tree with $n$ vertices $(n>0)$ has $n-1$ edges.
-        \item L10.5.3 - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
-        \item L10.5.4 - If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
-        \item T10.6.1 - If $T$ is a full binary tree with $k$ internal vertices, then $T$ has a total of $2k + 1$ vertices and has $k+1$ terminal vertices.
-        \item T10.6.2 - For non-negative integers $h$, if $T$ is any binary tree with height $h$ and $t$ terminal vertices, then $t \leq 2^h$.
-        \item P10.7.1 - 
+        \item - Any tree with $n$ vertices $(n>0)$ has $n-1$ edges.
+        \item - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
+        \item - If $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
+        \item - If $T$ is a full binary tree with $k$ internal vertices, then $T$ has a total of $2k + 1$ vertices and has $k+1$ terminal vertices.
+        \item - For non-negative integers $h$, if $T$ is any binary tree with height $h$ and $t$ terminal vertices, then $t \leq 2^h$.
+        \item - 
         \begin{enumerate}
             \item Every connected graph has a spanning tree.
             \item Any two spanning trees for a graph have the same number of edges
