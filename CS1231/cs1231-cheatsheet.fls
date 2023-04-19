@@ -1,8 +1,8 @@
-PWD /Users/haowei/codes/Cheatsheets
+PWD /Users/haowei/codes/Cheatsheets/CS1231
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/haowei/codes/Cheatsheets/cs1231-cheatsheet.tex
+INPUT /Users/haowei/codes/Cheatsheets/CS1231/cs1231-cheatsheet.tex
 OUTPUT cs1231-cheatsheet.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls

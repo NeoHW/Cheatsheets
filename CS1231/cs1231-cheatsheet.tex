@@ -565,16 +565,20 @@ Let $A$ be a set and $R$ be a relation on $A$.
     \item \bf{function/map} from A to B : each element of A exactly $f$-related to one element of B.
         \begin{itemize}
             \item \bf{Important} : $(x,y) \in f \iff y = f(x)$
-            \item every element in A $f$-related to at least one of B
+            \item (F1): every element in A $f$-related to at least one of B
             $ \forall x \in A \: \exists y \in B \:\: (x,y) \in f$
-            \item every element in A $f$-related to at most one of B
+            \item (F2): every element in A $f$-related to at most one of B
             $ \forall x \in A \: \exists y_1,y_2 \in B \:\: ((x,y_1) \in f \land (x,y_1) \in f \then y_1 = y_2)$
             \item $f:A \to B$ : "$f$ is a function from $A$ to $B$"
             \item $f:x \to y$ : "$f$ maps $x$ to $y$"
             \item \bf{domain} of f = $A$
             \item \bf{codomain} of f = $B$
             \item \bf{range/image} of f = $\{f(x) : x \in A\} $ 
-                \\*$= \{y \in B \mid y= f(x) \text{ for some } x \in A \}$
+                \\$= \{y \in B \mid y= f(x) \text{ for some } x \in A \}$
+                \begin{itemize}
+                    \item range($f$) $\in$ codomain
+                    \item if $f$ is surjective: range($f$) $\in$ codomain $\in$ range($f$)
+                \end{itemize}
         \end{itemize}
     \item \bf{identity function} on A, $\text{id}_\text{A} : A \to A$ 
         \begin{itemize}
@@ -606,19 +610,19 @@ for $f:A \to B$
 \begin{itemize}
     \item \bf{surjective} (onto) : codomain = range
     \begin{itemize}
-        \item $\forall y \in B, \exists x \in A \ (y = f(x))$
-        \item surjective test: $\forall Y \subseteq B, Y \subseteq f(f^{-1}(Y))$
+        \item for every $B$, there is a $A$
+        \\ $\forall y \in B \ \exists x \in A \ (y = f(x))$
+        \item a function is \bf{not} surjective iff $\exists y \in B \ \forall x \in A \ (y \neq f(x))$
     \end{itemize}
     \item \bf{injective} : one-to-one
     \begin{itemize}
-        \item $\forall x_1, x_2\in A \ (f(x_1) = f(x_2) \Rightarrow x_1 = x_2)$
-        \item injective test: $\forall X \subseteq A, X \subseteq f^{-1}(f(X))$
+        \item for every $B$, at most one $A$
+        \\ $\forall x_1, x_2\in A \ (f(x_1) = f(x_2) \Rightarrow x_1 = x_2)$
+        \item a function is \bf{not} injective iff $\exists x_1, x_2\in A \ (f(x_1) = f(x_2) \land x_1 \neq x_2)$
     \end{itemize}
     \item \bf{bijective} : both surjective \& injective
-    \begin{itemize}
-        \item if $f$ is a bijection $A \then B$ , then $f^{-1}$ is a bijection $B \then A$ (P7.4.3)
-    \end{itemize}
 \end{itemize}
+
 \subsubsection{inverse}
 \begin{itemize}
     \item $\forall x \in A, \forall y \in B (f(x) = y \Iff g(y) = x)$
@@ -629,26 +633,48 @@ for $f:A \to B$
 \end{itemize}
 
 
-\section{8. CARDINALITY} % to do
+\section{8. CARDINALITY}
 \subsection{pigeonhole principle}
 \begin{center}
-    For any function $f$ from a finite set $X$ with $n$ elements to a finite set $Y$ with $m$ elements 
-and for any positive integer $k$, if $k < \frac{n}{m}$, then there is some $y \in Y$ 
-such that $y$ is the image of at least $k + 1$ distinct elements of $X$.
+    For any function $f$ from a finite set $A$ with $n$ elements to a finite set $B$ with $m$ elements 
+    if there is an injection $A \then B$, then $ n \leq m$
+\end{center}
+\subsection{dual pigeonhole principle}
+\begin{center}
+    For any function $f$ from a finite set $A$ with $n$ elements to a finite set $B$ with $m$ elements 
+    if there is an surjection $A \then B$, then $ n \geq m$
+\end{center}
+\subsection{T8.1.3}
+\begin{center}
+    For any function $f$ from a finite set $A$ with $n$ elements to a finite set $B$ with $m$ elements 
+    if there is a bijection $A \then B$, then $ n = m$
 \end{center}
 \begin{itemize}
     \item A function from a finite set to a smaller finite set cannot be injective.
     \item \textbf{presentation:}
     \begin{itemize}
-        \item There are $m$ <object M> (pigeons) and $n$ <object N>
+        \item There are $m$ pigeons and $n$ pegionholes
         \item Thus, by Pigeonhole Principle, ...
     \end{itemize}
 \end{itemize}
-\subsection{same cardinality} % to do
-\begin{center}
-\end{center}
+
+\subsection{same cardinality}
+\begin{itemize}
+    \item A set $A$ is said to have the same cardinality (HSC) as a set $B$ if there is a bijection $A \then B$
+    \item reflexivity : $A$ HSC $A$.
+    \item symmetry : if $A$ HSC $B$, then $B$ HSC $A$.
+    \item transitivity : if $A$ HSC $B$, and $B$ HSC $C$, then $A$ HSC $C$.
+\end{itemize}
+
+\subsection{finite sets}
+\begin{itemize}
+    \item A set $A$ is finite if it HSC $\{1,2, \dots , n\}$ for some $n \in \mathbb{N}$
+    \item $n$ is the cadinality/size of $A$, denoted by $|A|$
+    \item Let $A$ and $B$ be sets that HSC, then $A$ is finite iff $B$ is finite
+\end{itemize}
 
 \section{9. COUNTABILITY} % to do
+
 
 \section{10. COUNTING}
 \subsection{permutations}
@@ -1195,6 +1221,16 @@ For a connected weighted graph $G$ with $n$ vertices:
         \end{itemize}
         \item T6.4 - $x \lnot y \iff [x] = [y]$ , where $\lnot$ is an equivalence relation
         \item P7.4.3 - if $f$ is a bijection $A \then B$ , then $f^{-1}$ is a bijection $B \then A$
+    \end{itemize}
+
+    \subsection{functions}
+    \begin{itemize}
+        \item P7.4.13 - $f \circ \text{id}_\text{A} = f$ and $\text{id}_\text{A} \circ f = f$
+        \item P7.4.3 - if $f$ is a bijection $A \then B$ , then $f^{-1}$ is a bijection $B \then A$ 
+        \item T7.6 - if $f$ is surjective, and $g \circ f =  \text{id}_\text{A}$, then $g$ is injective
+        \item E7.9 - Let $f : A \then B$. if $f^{-1}$ is a function $B \then A$ , then $f^{-1}$ is bijective
+        \item range($f$) $\in$ codomain
+        \item if $f$ is surjective: range($f$) $\in$ codomain $\in$ range($f$)
     \end{itemize}
     
     \subsection{graphs}
