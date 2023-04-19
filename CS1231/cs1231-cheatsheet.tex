@@ -709,28 +709,33 @@ for $f:A \to B$
 \end{itemize}
 
 \section{10. COUNTING}
-\subsection{permutations}
-\centerline{$P(n, r) = \frac{n!}{(n-r)!}$ \ \ (also $_nP_r, P^n_r$)}
+\subsection{rules}
 \begin{itemize}
-    \item \textbf{multiplication/product rule:} An operation of $k$ steps can be performed in $n_1 \times n_2 \times \dots \times n_k$ ways.
-
-    \item \textbf{addition/sum rule:} Suppose a finite set $A$ equals the union of 
-    $k$ distinct mutually disjoint subsets $A_1, A_2, \dots, A_k$. Then 
+    \item \textbf{addition/sum rule:} Let $A$ and $B$ be \bf{disjoint} finite sets
     
-    \centerline{$\abs{A} = \abs{A_1} + \abs{A_2} + \dots + \abs{A_k}$}
+    \centerline{$\abs{A \cup B} = \abs{A} + \abs{B} $}
 
-    \item \textbf{difference rule:} if $A$ is a finite set and $B \subseteq A$, then
+    \item \textbf{difference rule:} Let $X$ and $Y$ be finite sets. Then $Y \backslash X$ is finite, and if $X \subseteq Y$
 
-    \centerline{$\abs{A \backslash B} = \abs{A} = \abs{B}$}
+    \centerline{$\abs{Y \backslash X} = \abs{Y} - \abs{X}$}
 
+    \item \textbf{inclusion/exclusion rule 2 sets: } $\abs{A \cup B} = \abs{A} + \abs{B} - \abs{A \cap B}$
+    \item \textbf{inclusion/exclusion rule 3 sets : } $\abs{A \cup B \cup C} = \abs{A} + \abs{B} + \abs{C} - \abs{A \cap B} - \abs{B \cap C} - \abs{C \cap A} + \abs{A \cap B \cap C}$
+    \item \textbf{multiplication/product rule:} $\abs{A \times B} = \abs{A} \times \abs{B}$
+    \item \textbf{general multiplication rule:} Let $A$ be set of size $m$, and for each $ x \in A$, let $B_x$ be set of size $n$. Then $\{(x,y) : x \in A$ and $y \in B_x\}$ is finite and has size $mn$
     \item \textbf{complement:} $P(\bar{A}) = 1 - P(A)$
-    \item \textbf{inclusion/exclusion rule: } $\abs{A \cup B \cup C} = \abs{A} + \abs{B} + \abs{C} - \abs{A \cap B} - \abs{B \cap C} - \abs{C \cap A} + \abs{A \cap B \cap C}$
+    \item $\vert \mathcal{P}(A) \vert = 2^{\vert A \vert}$, given that A is a finite set
 \end{itemize}
 
+\subsection{permutations}
+pick $r$ elements from a set of size $n$ without replacement where order matters
+\centerline{$P(n, r) = \frac{n!}{(n-r)!}$ \ \ (also $_nP_r, P^n_r$)}
+if $ r > n$ , 0 ways
 \subsubsection{permutations with indistinguishable objects}
 \begin{center}
     For $n$ objects with $n_k$ of type $k$ indistinguishable from each other, the total number of distinguishable permutations
     \\* $= \frac{n!}{n_1!n_2!\dots n_k!}$
+    \\ E.g. num of permuatations for "EGG" = $\frac{3!}{2!}$ = 3
 \end{center}
 
 \subsection{combinations}
@@ -739,18 +744,6 @@ for $f:A \to B$
     
     \textit{r}-combinations from $n$ elements with \textbf{repetition}
     \\* $= \binom{r + n - 1}{r}$
-\end{center}
-
-\subsubsection{pascal's formula}
-\begin{center}
-    Suppose $n, r \in \mathbb{Z}^+$ with $r \leq n$. Then
-    \\* $\binom{n + 1}{r} = \binom{n}{r-1} + \binom{n}{r}$
-\end{center}
-
-\subsubsection{binomial theorem}
-\begin{center}
-    $(a + b)^n = \sum^n_{k=0} \binom{n}{k} a^{n-k}b^k$
-    \\* binomial coefficient: $\binom{n}{k}$
 \end{center}
 
 \section{11. GRAPHS}
@@ -906,7 +899,7 @@ Let $G = (V_G, E_G)$ and $G' = (V_{G'}, E_{G'})$ be two graphs.
     \\* $v$ is an endpoint of $e \Iff g(v)$ is an endpoint of $h(e)$.
 \end{center}
 
-\section{11. TREES}
+\section{12. TREES}
 \begin{itemize}
     \item \textbf{tree} is a \textbf{connected acyclic undirected} graph
     \begin{itemize}
