@@ -740,6 +740,7 @@ if $ r > n$ , 0 ways
 
 \subsection{combinations}
 \begin{center}
+    Let $A$ be a set of size $n$. Number of subsets of $A$ of size $r$ is 
     $\binom{n}{r} = \frac{n!}{r! (n-r)!}$ (also $C(n, r)$, $_nC_r$, $C_{n,r}$, $^nC_r$)
     
     \textit{r}-combinations from $n$ elements with \textbf{repetition}
@@ -1234,6 +1235,14 @@ For a connected weighted graph $G$ with $n$ vertices:
         \item if $f$ is surjective: range($f$) $\in$ codomain $\in$ range($f$)
     \end{itemize}
     
+    \subsection{counting}
+    \begin{itemize}
+        \item Tut8.7a - if $g \circ f$ is surjective, then $g$ is surjective
+        \item Tut8.7b - if $g \circ f$ is injective, then $f$ is injective
+        \item Tut8.9a - if there is a surjection $f : A \then B$ that is not an injection, then $n > m$
+        \item Tut8.9b - if there is an injection $f : A \then B$ that is not a surjection, then $n < m$
+    \end{itemize}
+
     \subsection{graphs and trees}
     \begin{itemize}
         \item - Let $G$ be a graph.
@@ -1242,6 +1251,7 @@ For a connected weighted graph $G$ with $n$ vertices:
             \item T12.1.4 - A connected undirected graph $G$ is a tree $\iff$ removing any edge disconnects $G$
             \item - If $G$ is connected and $G$ contains a circuit, then an edge of the circuit can be removed without disconnecting $G$.
         \end{itemize}
+        \item P11.3.6 -  Every vertex in $G$ is in some connected component of $G$
         \item T12.1.4 - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
         \item T12.1.6 - Let $G$ be finite tree with $>$ 1 vertex, $|E(G)| = |V(G)| - 1$
         \item T12.1.8 - Let $G$ be a connected cyclic finite undirected graph, then $|E(G)| \geq |V(G)|$
