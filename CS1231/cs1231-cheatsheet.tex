@@ -862,8 +862,8 @@ Let $G$ be a graph; let $v$ and $w$ be vertices of $G$.
         \item $H$ is connected
         \item no connected subgraph of $G$ has $H$ as a subgraph and contains vertices or edges that are not in $H$
     \end{enumerate}
-    \item Let G be an undirected graph, then every vertex $v$ in $G$ is in some connected component of $G$
-    \item Let $u,v$ be vertices in an undirected graph $G$. Then there is a path between $u$ and $v$ in G $\iff$ there is a connected component $G$ that has both $u$ and $v$ in it
+    \item P11.3.6 - Let G be an undirected graph, then every vertex $v$ in $G$ is in some connected component of $G$
+    \item T11.3.7 - Let $u,v$ be vertices in an undirected graph $G$. Then there is a path between $u$ and $v$ in G $\iff$ there is a connected component $G$ that has both $u$ and $v$ in it
 \end{itemize}
 
 \subsubsection{counting walks of length N}
@@ -1250,15 +1250,16 @@ For a connected weighted graph $G$ with $n$ vertices:
             \item - If $G$ is connected, then any two distinct vertices of $G$ can be connected by a path
             \item T12.1.4 - A connected undirected graph $G$ is a tree $\iff$ removing any edge disconnects $G$
             \item - If $G$ is connected and $G$ contains a circuit, then an edge of the circuit can be removed without disconnecting $G$.
+            \item Tut11.5b - For all undirected graphs $G$ with at least 1 vertex but no loop, either $G$ or $\overline G$ is connected
         \end{itemize}
-        \item P11.3.6 -  Every vertex in $G$ is in some connected component of $G$
-        \item T12.1.4 - If $G$ is any connected graph, $C$ is any circuit in $G$, and one of the edges of $C$ is removed from $G$, then the graph that remains is still connected.
-        \item T12.1.6 - Let $G$ be finite tree with $>$ 1 vertex, $|E(G)| = |V(G)| - 1$
+        \item P11.3.6 -  Every vertex in $G$ is in some \bf{connected component} of $G$
+        \item T12.1.4 - A connected undirected graph $G$ is a \bf{tree} $\iff$ removing any edge disconnects $G$
+        \item T12.1.6 - Let $G$ be finite \bf{tree} with $>$ 1 vertex, $|E(G)| = |V(G)| - 1$
         \item T12.1.8 - Let $G$ be a connected cyclic finite undirected graph, then $|E(G)| \geq |V(G)|$
-        \item P12.2.3 - Let $T$ be a finite rooted tree of heigh $h$ in which every vertex has at most 2 children, then $T$ has at most $2^h$ terminal vertices.
-        \item P12.2.5 - Let $T$ be a finite rooted tree in which every vertex has exactly 2 children. If $T$ has exactly $t$ terminal vertices, then $T$ has exactly $t-1$ internal vertices and thus exactly $2t-1$ vertices in total
-        \item Tut12.9 - Let $T$ be a finite tree with at least 2 vertices. $T$ has at least 2 vertices that are each in exactly one edge.
-        \item - If $T$ is a full binary tree with $k$ internal vertices, then $T$ has a total of $2k + 1$ vertices and has $k+1$ terminal vertices.
+        \item P12.2.3 - Let $T$ be a finite \bf{rooted tree} of heigh $h$ in which every vertex has at most 2 children, then $T$ has at most $2^h$ terminal vertices.
+        \item P12.2.5 - Let $T$ be a finite \bf{rooted tree} in which every vertex has exactly 2 children. If $T$ has exactly $t$ terminal vertices, then $T$ has exactly $t-1$ internal vertices and thus exactly $2t-1$ vertices in total
+        \item Tut12.9 - Let $T$ be a finite \bf{tree} with at least 2 vertices. $T$ has at least 2 vertices that are each in exactly one edge.
+        \item - If $T$ is a \bf{full binary tree} with $k$ internal vertices, then $T$ has a total of $2k + 1$ vertices and has $k+1$ terminal vertices.
     \end{itemize}
 
 \begin{center}
