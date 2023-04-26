@@ -568,7 +568,7 @@ Let $A$ be a set and $R$ be a relation on $A$.
             \item (F1): every element in A $f$-related to at least one of B
             $ \forall x \in A \: \exists y \in B \:\: (x,y) \in f$
             \item (F2): every element in A $f$-related to at most one of B
-            $ \forall x \in A \: \exists y_1,y_2 \in B \:\: ((x,y_1) \in f \land (x,y_1) \in f \then y_1 = y_2)$
+            $ \forall x \in A \: \exists y_1,y_2 \in B \:\: ((x,y_1) \in f \land (x,y_2) \in f \then y_1 = y_2)$
             \item $f:A \to B$ : "$f$ is a function from $A$ to $B$"
             \item $f:x \to y$ : "$f$ maps $x$ to $y$"
             \item \bf{domain} of f = $A$
@@ -616,6 +616,7 @@ for $f:A \to B$
     \end{itemize}
     \item \bf{injective} : one-to-one
     \begin{itemize}
+        \item All functions that have an inverse are bijective
         \item for every $B$, at most one $A$
         \\ $\forall x_1, x_2\in A \ (f(x_1) = f(x_2) \Rightarrow x_1 = x_2)$
         \item a function is \bf{not} injective iff $\exists x_1, x_2\in A \ (f(x_1) = f(x_2) \land x_1 \neq x_2)$
@@ -678,6 +679,7 @@ for $f:A \to B$
 \begin{itemize}
     \item A set is countable if it is finite or has the same cardinality as $\mathbb{N}$
     \item $\mathbb{Z}$ is countable
+    \item $\mathbb{Z} \times \mathbb{Z}$ is countable
     \item $\mathbb{N} \times \mathbb{N}$ is countable
 \end{itemize}
 
